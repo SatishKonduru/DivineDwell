@@ -3,8 +3,8 @@
     --box-shadow: 1px 1px 1px 1px var(--myPrimary);
   }
   @font-face {
-    font-family: "Poppins";
-    src: local("Poppins"),
+    font-family: "poppins";
+    src: local("poppins"),
       url("./assets/fonts/Poppins-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
@@ -15,11 +15,10 @@
     height: 100%;
   }
   * {
-    font-family: "Poppins", sans-serif;
+    font-family: "poppins", sans-serif;
   }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
