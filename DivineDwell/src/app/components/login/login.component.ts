@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { globalProperties } from '../../shared/globalProperties';
 
@@ -10,11 +10,11 @@ import { globalProperties } from '../../shared/globalProperties';
 })
 export class LoginComponent  implements OnInit{
   loginForm: any = FormGroup
-  constructor(private _router: Router){}
+  constructor(private _router: Router, private _formBuilder: FormBuilder){}
   ngOnInit(): void {
-    this.loginForm = new FormGroup({
-      email: new FormControl('',[Validators.required, Validators.pattern(globalProperties.emailRegx)]),
-      password: new FormControl('',[Validators.required])
+    this.loginForm = this._formBuilder.group({
+      email: ['',[Validators.required, Validators.pattern(globalProperties.emailRegx)]],
+      password: ['',[Validators.required]]
     })
   }
 

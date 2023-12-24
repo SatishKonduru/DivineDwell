@@ -10,8 +10,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AdminModule } from './modules/admin/admin.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, withFetch } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     AdminModule,
     HttpClientModule
+    
   ],
   providers: [
     provideClientHydration(),

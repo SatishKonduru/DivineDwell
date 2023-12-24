@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { globalProperties } from '../../shared/globalProperties';
 
 @Component({
@@ -9,12 +9,13 @@ import { globalProperties } from '../../shared/globalProperties';
 })
 export class RegisterComponent implements OnInit{
   registerForm : any = FormGroup
+  constructor(private _formBuilder: FormBuilder){}
   ngOnInit(): void {
-    this.registerForm = new FormGroup({
-      username: new FormControl('',[Validators.required, Validators.pattern(globalProperties.nameRegx)]),
-      password: new FormControl('',[Validators.required]),
-      email: new FormControl('',[Validators.required, Validators.pattern(globalProperties.emailRegx)]),
-      contactNumber: new FormControl('',[Validators.required, Validators.pattern(globalProperties.contactNumberRegex)])
+    this.registerForm = this._formBuilder.group({
+      username: ['',[Validators.required, Validators.pattern(globalProperties.nameRegx)]],
+      password: ['',[Validators.required]],
+      email: ['',[Validators.required, Validators.pattern(globalProperties.emailRegx)]],
+      contactNumber: ['',[Validators.required, Validators.pattern(globalProperties.contactNumberRegex)]]
     })
 
     
