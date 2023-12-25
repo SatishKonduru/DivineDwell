@@ -17,7 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   imports: [
     CommonModule,
-     AdminRoutingModule,
+    AdminRoutingModule,
     AngularMaterialModule
   ]
 })

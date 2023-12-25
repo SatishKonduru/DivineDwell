@@ -10,10 +10,10 @@
     <!-- Your login form goes here -->
     <form [formGroup]="loginForm">
       <div class="mb-3">
-        <label for="Email" class="block text-sm font-medium text-gray-600"
+        <label for="email" class="block text-sm font-medium text-gray-600"
           >Email: :</label
         >
-        <input
+        <input matInput
           type="email"
           formControlName="email"
           class="mt-1 p-2 w-full border rounded"
@@ -36,25 +36,23 @@
         <label for="password" class="block text-sm font-medium text-gray-600"
           >Password:</label
         >
-        <input
+        <input matInput
           type="password"
           formControlName="password"
           class="mt-1 p-2 w-full border rounded"
         />
-        <mat-error
-          *ngIf="
-            loginForm.controls.password.touched &&
-            loginForm.controls.password.invalid
-          " class="font-thin text-red-600 text-sm"
-        >
-          <span *ngIf="loginForm.controls.password.errors?.required"
-            >Password is Required.</span
-          >
-        </mat-error>
+        @if(loginForm.controls.password.touched &&
+        loginForm.controls.password.invalid){
+          <mat-error  class="font-thin text-red-600 text-sm"  >
+                @if(loginForm.controls.password.errors?.required){
+                        <span> Password is Required.</span>
+                       }
+          </mat-error>
+      }
       </div>
 
       <div class="flex justify-center">
-        <button type="submit" class="bg-orange-500 text-white p-2 rounded" (click)="userLogin()">
+        <button type="submit" class="bg-orange-500 text-white p-2 rounded" (click)="userLogin()" [disabled]="!(loginForm.valid && loginForm.dirty)">
           Login
         </button>
       </div>
