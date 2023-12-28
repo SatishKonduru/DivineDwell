@@ -3,9 +3,9 @@
     --box-shadow: 1px 1px 1px 1px var(--myPrimary);
   }
   @font-face {
-    font-family: "CommitMono-200-Regular";
-    src: local("CommitMono-200-Regular"),
-      url("./assets/fonts/CommitMono/CommitMono-200-Regular.otf") format("truetype");
+    font-family: "Space_Mono";
+    src: local("SpaceMono-Regular"),
+      url("./assets/fonts/Space_Mono/SpaceMono-Regular.ttf") format("truetype");
       font-size: '18px';
       font-style: normal;
   }
