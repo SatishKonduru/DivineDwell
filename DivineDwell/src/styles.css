@@ -3,11 +3,11 @@
     --box-shadow: 1px 1px 1px 1px var(--myPrimary);
   }
   @font-face {
-    font-family: "CommitMono-500-Regular";
-    src: local("CommitMono-500-Regular"),
-      url("./assets/fonts/CommitMono/CommitMono-500-Regular.otf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
+    font-family: "CommitMono-200-Regular";
+    src: local("CommitMono-200-Regular"),
+      url("./assets/fonts/CommitMono/CommitMono-200-Regular.otf") format("truetype");
+      font-size: '18px';
+      font-style: normal;
   }
   
   html,
